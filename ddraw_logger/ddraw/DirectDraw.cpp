@@ -188,6 +188,19 @@ HRESULT DirectDraw::CreateSurface(
 	str << this << " " << __FUNCTION__;
 	str << tostr_DDSURFACEDESC(lpDDSurfaceDesc);
 
+	if (lpDDSurfaceDesc)
+	{
+		if (lpDDSurfaceDesc->ddsCaps.dwCaps &  DDSCAPS_ZBUFFER)
+		{
+			lpDDSurfaceDesc->dwWidth = GetSystemMetrics(SM_CXSCREEN);
+			lpDDSurfaceDesc->dwHeight = GetSystemMetrics(SM_CYSCREEN);
+
+			str << std::endl;
+			str << "\tMODIFIED";
+			str << tostr_DDSURFACEDESC(lpDDSurfaceDesc);
+		}
+	}
+
 	HRESULT hr = this->_original->CreateSurface(lpDDSurfaceDesc, lplpDDSurface, pUnkOuter);
 
 	if (SUCCEEDED(hr))
@@ -503,12 +516,12 @@ HRESULT DirectDraw::SetDisplayMode(
 	str << this << " " << __FUNCTION__;
 	str << " " << dwWidth << "x" << dwHeight << " " << dwBPP;
 
-	//dwWidth = GetSystemMetrics(SM_CXSCREEN);
-	//dwHeight = GetSystemMetrics(SM_CYSCREEN);
+	dwWidth = GetSystemMetrics(SM_CXSCREEN);
+	dwHeight = GetSystemMetrics(SM_CYSCREEN);
 
-	//str << std::endl;
-	//str << "\tMODIFIED";
-	//str << " " << dwWidth << "x" << dwHeight << " " << dwBPP;
+	str << std::endl;
+	str << "\tMODIFIED";
+	str << " " << dwWidth << "x" << dwHeight << " " << dwBPP;
 
 	HRESULT hr = this->_original->SetDisplayMode(dwWidth, dwHeight, dwBPP);
 
