@@ -1,3 +1,6 @@
+// Copyright (c) 2014 Jérémy Ansel
+// Licensed under the MIT license. See LICENSE.txt
+
 #include "common.h"
 #include "Direct3DViewport.h"
 #include "Direct3D.h"

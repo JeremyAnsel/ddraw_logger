@@ -30,6 +30,7 @@
     <ClInclude Include="ExecuteBufferDumper.h" />
     <ClInclude Include="LibraryLoader.h" />
     <ClInclude Include="logger.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="utils.h" />
     <ClInclude Include="wrapper.h" />
@@ -51,6 +52,9 @@
     <ClCompile Include="logger.cpp" />
     <ClCompile Include="utils.cpp" />
     <ClCompile Include="wrapper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ddraw.rc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{13934377-EED9-4816-8003-89794467391D}</ProjectGuid>

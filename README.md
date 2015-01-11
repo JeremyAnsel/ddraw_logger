@@ -24,3 +24,6 @@ Supported APIs are:
 - IDirectDrawClipper
 - IDirectDrawPalette
 - IDirectDrawSurface
+
+## License
+ddraw_logger is licensed under the MIT license. See LICENSE.txt
