@@ -49,6 +49,8 @@ HRESULT DirectDrawPalette::QueryInterface(
 		str << " " << *obp;
 	}
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -62,6 +64,8 @@ ULONG DirectDrawPalette::AddRef()
 
 	str << std::endl;
 	str << "\t" << count;
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return count;
@@ -82,6 +86,8 @@ ULONG DirectDrawPalette::Release()
 	str << std::endl;
 	str << "\t" << count;
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return count;
 }
@@ -97,6 +103,8 @@ HRESULT DirectDrawPalette::GetCaps(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -116,6 +124,8 @@ HRESULT DirectDrawPalette::GetEntries(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -140,6 +150,8 @@ HRESULT DirectDrawPalette::Initialize(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -158,6 +170,8 @@ HRESULT DirectDrawPalette::SetEntries(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;

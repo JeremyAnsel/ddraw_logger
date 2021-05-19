@@ -16,3 +16,6 @@
 #include "wrapper.h"
 #include "logger.h"
 #include "utils.h"
+
+// @TheRedDaemon: get return address with _ReturnAddress
+#include <intrin.h>

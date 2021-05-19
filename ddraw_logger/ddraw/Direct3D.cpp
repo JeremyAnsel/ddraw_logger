@@ -49,6 +49,8 @@ HRESULT Direct3D::QueryInterface(
 		str << " " << *obp;
 	}
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -62,6 +64,8 @@ ULONG Direct3D::AddRef()
 
 	str << std::endl;
 	str << "\t" << count;
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return count;
@@ -82,6 +86,8 @@ ULONG Direct3D::Release()
 	str << std::endl;
 	str << "\t" << count;
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return count;
 }
@@ -95,6 +101,8 @@ HRESULT Direct3D::Initialize(REFCLSID riid)
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -126,8 +134,12 @@ HRESULT Direct3D::EnumDevices(
 
 	HRESULT hr = this->_original->EnumDevices(EnumDevicesCallback, lpUserArg);
 
-	LogText(tostr_HR(hr));
+	std::ostringstream str2;
+	str2 << std::endl;
+	str2 << tostr_HR(hr);
+	str2 << std::endl << "\treturn to: " << _ReturnAddress();
 
+	LogText(str2.str());
 	return hr;
 }
 
@@ -151,6 +163,8 @@ HRESULT Direct3D::CreateLight(
 	{
 		str << " " << *lplpDirect3DLight;
 	}
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -176,6 +190,8 @@ HRESULT Direct3D::CreateMaterial(
 	{
 		str << " " << *lplpDirect3DMaterial;
 	}
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -204,6 +220,8 @@ HRESULT Direct3D::CreateViewport(
 		str << " " << *lplpD3DViewport;
 	}
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -222,6 +240,8 @@ HRESULT Direct3D::FindDevice(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;

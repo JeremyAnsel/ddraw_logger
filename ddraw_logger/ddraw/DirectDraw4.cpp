@@ -50,6 +50,8 @@ HRESULT DirectDraw4::QueryInterface(
 		str << " " << *obp;
 	}
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -63,6 +65,8 @@ ULONG DirectDraw4::AddRef()
 
 	str << std::endl;
 	str << "\t" << count;
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return count;
@@ -83,6 +87,8 @@ ULONG DirectDraw4::Release()
 	str << std::endl;
 	str << "\t" << count;
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return count;
 }
@@ -96,6 +102,8 @@ HRESULT DirectDraw4::Compact()
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -124,6 +132,8 @@ HRESULT DirectDraw4::CreateClipper(
 	{
 		str << " " << *lplpDDClipper;
 	}
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -161,6 +171,8 @@ HRESULT DirectDraw4::CreatePalette(
 		str << " " << *lplpDDPalette;
 	}
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -181,6 +193,8 @@ HRESULT DirectDraw4::CreateSurface(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -205,6 +219,8 @@ HRESULT DirectDraw4::DuplicateSurface(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -227,10 +243,13 @@ HRESULT DirectDraw4::EnumDisplayModes(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
 
+// @TheRedDaemon: No log for callback function here?
 HRESULT DirectDraw4::EnumSurfaces(
 	DWORD dwFlags,
 	LPDDSURFACEDESC2 lpDDSD,
@@ -249,6 +268,8 @@ HRESULT DirectDraw4::EnumSurfaces(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -262,6 +283,8 @@ HRESULT DirectDraw4::FlipToGDISurface()
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -280,6 +303,8 @@ HRESULT DirectDraw4::GetCaps(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -295,6 +320,8 @@ HRESULT DirectDraw4::GetDisplayMode(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -312,6 +339,8 @@ HRESULT DirectDraw4::GetFourCCCodes(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -332,6 +361,8 @@ HRESULT DirectDraw4::GetGDISurface(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -347,6 +378,8 @@ HRESULT DirectDraw4::GetMonitorFrequency(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -364,6 +397,8 @@ HRESULT DirectDraw4::GetScanLine(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -379,6 +414,8 @@ HRESULT DirectDraw4::GetVerticalBlankStatus(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -397,6 +434,8 @@ HRESULT DirectDraw4::Initialize(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -410,6 +449,8 @@ HRESULT DirectDraw4::RestoreDisplayMode()
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -439,6 +480,8 @@ HRESULT DirectDraw4::SetCooperativeLevel(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -459,6 +502,8 @@ HRESULT DirectDraw4::SetDisplayMode(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -481,6 +526,8 @@ HRESULT DirectDraw4::WaitForVerticalBlank(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -498,6 +545,8 @@ HRESULT DirectDraw4::GetAvailableVidMem(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -519,6 +568,8 @@ HRESULT DirectDraw4::GetSurfaceFromDC(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -533,6 +584,8 @@ HRESULT DirectDraw4::RestoreAllSurfaces()
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -546,6 +599,8 @@ HRESULT DirectDraw4::TestCooperativeLevel()
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -563,6 +618,8 @@ HRESULT DirectDraw4::GetDeviceIdentifier(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;

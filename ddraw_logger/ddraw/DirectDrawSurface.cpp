@@ -61,6 +61,8 @@ HRESULT DirectDrawSurface::QueryInterface(
 		str << " " << *obp;
 	}
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -74,6 +76,8 @@ ULONG DirectDrawSurface::AddRef()
 
 	str << std::endl;
 	str << "\t" << count;
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return count;
@@ -93,6 +97,8 @@ ULONG DirectDrawSurface::Release()
 
 	str << std::endl;
 	str << "\t" << count;
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return count;
@@ -116,6 +122,8 @@ HRESULT DirectDrawSurface::AddAttachedSurface(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -132,6 +140,8 @@ HRESULT DirectDrawSurface::AddOverlayDirtyRect(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -231,6 +241,8 @@ HRESULT DirectDrawSurface::Blt(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -251,6 +263,8 @@ HRESULT DirectDrawSurface::BltBatch(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -286,6 +300,8 @@ HRESULT DirectDrawSurface::BltFast(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -309,6 +325,8 @@ HRESULT DirectDrawSurface::DeleteAttachedSurface(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -328,6 +346,8 @@ HRESULT DirectDrawSurface::EnumAttachedSurfaces(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -353,6 +373,8 @@ HRESULT DirectDrawSurface::EnumOverlayZOrders(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -380,6 +402,8 @@ HRESULT DirectDrawSurface::Flip(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -440,6 +464,8 @@ HRESULT DirectDrawSurface::GetAttachedSurface(
 		str << " " << *lplpDDAttachedSurface;
 	}
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -459,6 +485,8 @@ HRESULT DirectDrawSurface::GetBltStatus(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -474,6 +502,8 @@ HRESULT DirectDrawSurface::GetCaps(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -501,6 +531,8 @@ HRESULT DirectDrawSurface::GetClipper(
 		str << " " << *lplpDDClipper;
 	}
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -523,6 +555,8 @@ HRESULT DirectDrawSurface::GetColorKey(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -538,6 +572,8 @@ HRESULT DirectDrawSurface::GetDC(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -558,6 +594,8 @@ HRESULT DirectDrawSurface::GetFlipStatus(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -574,6 +612,8 @@ HRESULT DirectDrawSurface::GetOverlayPosition(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -601,6 +641,8 @@ HRESULT DirectDrawSurface::GetPalette(
 		str << " " << *lplpDDPalette;
 	}
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -616,6 +658,8 @@ HRESULT DirectDrawSurface::GetPixelFormat(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -637,6 +681,8 @@ HRESULT DirectDrawSurface::GetSurfaceDesc(
 	{
 		str << tostr_DDSURFACEDESC(lpDDSurfaceDesc);
 	}
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -660,6 +706,8 @@ HRESULT DirectDrawSurface::Initialize(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -673,6 +721,8 @@ HRESULT DirectDrawSurface::IsLost()
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -705,6 +755,8 @@ HRESULT DirectDrawSurface::Lock(
 		str << tostr_DDSURFACEDESC(lpDDSurfaceDesc);
 	}
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -721,6 +773,8 @@ HRESULT DirectDrawSurface::ReleaseDC(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -734,6 +788,8 @@ HRESULT DirectDrawSurface::Restore()
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -756,6 +812,8 @@ HRESULT DirectDrawSurface::SetClipper(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -780,6 +838,8 @@ HRESULT DirectDrawSurface::SetColorKey(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -796,6 +856,8 @@ HRESULT DirectDrawSurface::SetOverlayPosition(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -818,6 +880,8 @@ HRESULT DirectDrawSurface::SetPalette(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -833,6 +897,8 @@ HRESULT DirectDrawSurface::Unlock(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -886,6 +952,8 @@ HRESULT DirectDrawSurface::UpdateOverlay(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -904,6 +972,8 @@ HRESULT DirectDrawSurface::UpdateOverlayDisplay(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -955,6 +1025,8 @@ HRESULT DirectDrawSurface::UpdateOverlayZOrder(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
