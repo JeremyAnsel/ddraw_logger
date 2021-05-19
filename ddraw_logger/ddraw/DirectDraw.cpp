@@ -10,6 +10,8 @@
 #include "DirectDrawSurface.h"
 #include "Direct3D.h"
 
+// #include <intrin.h> // test
+
 DirectDraw::DirectDraw(IDirectDraw* original)
 {
 	this->_original = original;
@@ -191,6 +193,8 @@ HRESULT DirectDraw::CreateSurface(
 	str << this << " " << __FUNCTION__;
 	str << tostr_DDSURFACEDESC(lpDDSurfaceDesc);
 
+	/* @TheRedDaemon: removed modification, intention is to see what it normally does, or not?
+
 	if (lpDDSurfaceDesc)
 	{
 		if (lpDDSurfaceDesc->ddsCaps.dwCaps &  DDSCAPS_ZBUFFER)
@@ -203,6 +207,8 @@ HRESULT DirectDraw::CreateSurface(
 			str << tostr_DDSURFACEDESC(lpDDSurfaceDesc);
 		}
 	}
+
+	*/
 
 	HRESULT hr = this->_original->CreateSurface(lpDDSurfaceDesc, lplpDDSurface, pUnkOuter);
 
@@ -218,6 +224,8 @@ HRESULT DirectDraw::CreateSurface(
 	{
 		str << " " << *lplpDDSurface;
 	}
+
+	// str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -519,12 +527,16 @@ HRESULT DirectDraw::SetDisplayMode(
 	str << this << " " << __FUNCTION__;
 	str << " " << dwWidth << "x" << dwHeight << " " << dwBPP;
 
+	/* @TheRedDaemon: removed modification, intention is to see what it normally does, or not?
+
 	dwWidth = GetSystemMetrics(SM_CXSCREEN);
 	dwHeight = GetSystemMetrics(SM_CYSCREEN);
 
 	str << std::endl;
 	str << "\tMODIFIED";
 	str << " " << dwWidth << "x" << dwHeight << " " << dwBPP;
+	
+	*/
 
 	HRESULT hr = this->_original->SetDisplayMode(dwWidth, dwHeight, dwBPP);
 
