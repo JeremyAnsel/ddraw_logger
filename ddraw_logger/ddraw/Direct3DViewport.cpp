@@ -50,6 +50,8 @@ HRESULT Direct3DViewport::QueryInterface(
 		str << " " << *obp;
 	}
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -63,6 +65,8 @@ ULONG Direct3DViewport::AddRef()
 
 	str << std::endl;
 	str << "\t" << count;
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return count;
@@ -82,6 +86,8 @@ ULONG Direct3DViewport::Release()
 
 	str << std::endl;
 	str << "\t" << count;
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return count;
@@ -104,6 +110,8 @@ HRESULT Direct3DViewport::Initialize(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -120,6 +128,8 @@ HRESULT Direct3DViewport::GetViewport(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -135,6 +145,8 @@ HRESULT Direct3DViewport::SetViewport(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -155,6 +167,8 @@ HRESULT Direct3DViewport::TransformVertices(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -172,6 +186,8 @@ HRESULT Direct3DViewport::LightElements(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -187,6 +203,8 @@ HRESULT Direct3DViewport::SetBackground(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -204,6 +222,8 @@ HRESULT Direct3DViewport::GetBackground(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -226,6 +246,8 @@ HRESULT Direct3DViewport::SetBackgroundDepth(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -254,6 +276,8 @@ HRESULT Direct3DViewport::GetBackgroundDepth(
 		str << " " << *lplpDDSurface;
 	}
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -275,6 +299,8 @@ HRESULT Direct3DViewport::Clear(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -294,6 +320,8 @@ HRESULT Direct3DViewport::AddLight(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -316,6 +344,8 @@ HRESULT Direct3DViewport::DeleteLight(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -345,6 +375,8 @@ HRESULT Direct3DViewport::NextLight(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -360,6 +392,8 @@ HRESULT Direct3DViewport::GetViewport2(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -377,6 +411,8 @@ HRESULT Direct3DViewport::SetViewport2(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -392,6 +428,8 @@ HRESULT Direct3DViewport::SetBackgroundDepth2(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -409,6 +447,8 @@ HRESULT Direct3DViewport::GetBackgroundDepth2(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -434,6 +474,8 @@ HRESULT Direct3DViewport::Clear2(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;

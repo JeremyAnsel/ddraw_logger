@@ -66,6 +66,8 @@ HRESULT DirectDraw::QueryInterface(
 		str << " " << *obp;
 	}
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -79,6 +81,8 @@ ULONG DirectDraw::AddRef()
 
 	str << std::endl;
 	str << "\t" << count;
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return count;
@@ -99,6 +103,8 @@ ULONG DirectDraw::Release()
 	str << std::endl;
 	str << "\t" << count;
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return count;
 }
@@ -112,6 +118,8 @@ HRESULT DirectDraw::Compact()
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -140,6 +148,8 @@ HRESULT DirectDraw::CreateClipper(
 	{
 		str << " " << *lplpDDClipper;
 	}
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -177,6 +187,8 @@ HRESULT DirectDraw::CreatePalette(
 		str << " " << *lplpDDPalette;
 	}
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -191,6 +203,8 @@ HRESULT DirectDraw::CreateSurface(
 	str << this << " " << __FUNCTION__;
 	str << tostr_DDSURFACEDESC(lpDDSurfaceDesc);
 
+	/* @TheRedDaemon: removed modification, intention is to see what it normally does, or not?
+
 	if (lpDDSurfaceDesc)
 	{
 		if (lpDDSurfaceDesc->ddsCaps.dwCaps &  DDSCAPS_ZBUFFER)
@@ -203,6 +217,8 @@ HRESULT DirectDraw::CreateSurface(
 			str << tostr_DDSURFACEDESC(lpDDSurfaceDesc);
 		}
 	}
+
+	*/
 
 	HRESULT hr = this->_original->CreateSurface(lpDDSurfaceDesc, lplpDDSurface, pUnkOuter);
 
@@ -218,6 +234,8 @@ HRESULT DirectDraw::CreateSurface(
 	{
 		str << " " << *lplpDDSurface;
 	}
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -252,6 +270,8 @@ HRESULT DirectDraw::DuplicateSurface(
 		str << " " << *lplpDupDDSurface;
 	}
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -265,7 +285,6 @@ static HRESULT CALLBACK EnumModesCallback(LPDDSURFACEDESC lpDDSurfaceDesc, LPVOI
 	str << tostr_DDSURFACEDESC(lpDDSurfaceDesc);
 
 	LogText(str.str());
-
 	return s_lpEnumModesCallback(lpDDSurfaceDesc, lpContext);
 }
 
@@ -285,8 +304,12 @@ HRESULT DirectDraw::EnumDisplayModes(
 
 	HRESULT hr = this->_original->EnumDisplayModes(dwFlags, lpDDSurfaceDesc, lpContext, EnumModesCallback);
 
-	LogText(tostr_HR(hr));
+	std::ostringstream str2;
+	str2 << std::endl;
+	str2 << tostr_HR(hr);
+	str2 << std::endl << "\treturn to: " << _ReturnAddress();
 
+	LogText(str2.str());
 	return hr;
 }
 
@@ -308,6 +331,8 @@ HRESULT DirectDraw::EnumSurfaces(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -321,6 +346,8 @@ HRESULT DirectDraw::FlipToGDISurface()
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -339,6 +366,8 @@ HRESULT DirectDraw::GetCaps(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -354,6 +383,8 @@ HRESULT DirectDraw::GetDisplayMode(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -371,6 +402,8 @@ HRESULT DirectDraw::GetFourCCCodes(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -398,6 +431,8 @@ HRESULT DirectDraw::GetGDISurface(
 		str << " " << *lplpGDIDDSSurface;
 	}
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -413,6 +448,8 @@ HRESULT DirectDraw::GetMonitorFrequency(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -430,6 +467,8 @@ HRESULT DirectDraw::GetScanLine(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -445,6 +484,8 @@ HRESULT DirectDraw::GetVerticalBlankStatus(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -463,6 +504,8 @@ HRESULT DirectDraw::Initialize(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -476,6 +519,8 @@ HRESULT DirectDraw::RestoreDisplayMode()
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -505,6 +550,8 @@ HRESULT DirectDraw::SetCooperativeLevel(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -519,17 +566,23 @@ HRESULT DirectDraw::SetDisplayMode(
 	str << this << " " << __FUNCTION__;
 	str << " " << dwWidth << "x" << dwHeight << " " << dwBPP;
 
+	/* @TheRedDaemon: removed modification, intention is to see what it normally does, or not?
+
 	dwWidth = GetSystemMetrics(SM_CXSCREEN);
 	dwHeight = GetSystemMetrics(SM_CYSCREEN);
 
 	str << std::endl;
 	str << "\tMODIFIED";
 	str << " " << dwWidth << "x" << dwHeight << " " << dwBPP;
+	
+	*/
 
 	HRESULT hr = this->_original->SetDisplayMode(dwWidth, dwHeight, dwBPP);
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -551,6 +604,8 @@ HRESULT DirectDraw::WaitForVerticalBlank(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;

@@ -49,6 +49,8 @@ HRESULT DirectDrawClipper::QueryInterface(
 		str << " " << *obp;
 	}
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -62,6 +64,8 @@ ULONG DirectDrawClipper::AddRef()
 
 	str << std::endl;
 	str << "\t" << count;
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return count;
@@ -82,6 +86,8 @@ ULONG DirectDrawClipper::Release()
 	str << std::endl;
 	str << "\t" << count;
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return count;
 }
@@ -100,6 +106,8 @@ HRESULT DirectDrawClipper::GetClipList(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -115,6 +123,8 @@ HRESULT DirectDrawClipper::GetHWnd(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -138,6 +148,8 @@ HRESULT DirectDrawClipper::Initialize(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -153,6 +165,8 @@ HRESULT DirectDrawClipper::IsClipListChanged(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -171,6 +185,8 @@ HRESULT DirectDrawClipper::SetClipList(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -187,6 +203,8 @@ HRESULT DirectDrawClipper::SetHWnd(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;

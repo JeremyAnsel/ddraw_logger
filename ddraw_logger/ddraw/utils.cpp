@@ -147,6 +147,16 @@ std::string tostr_GUID(const GUID* lpGUID)
 	{
 		return " NULL";
 	}
+	
+	if ((DWORD)lpGUID == DDCREATE_EMULATIONONLY)
+	{
+		return " DDCREATE_EMULATIONONLY";
+	}
+
+	if ((DWORD)lpGUID == DDCREATE_HARDWAREONLY)
+	{
+		return " DDCREATE_HARDWAREONLY";
+	}
 
 	TOSTR_IID(IUnknown);
 	TOSTR_IID(IDirectDraw);

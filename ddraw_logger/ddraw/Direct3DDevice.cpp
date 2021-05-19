@@ -53,6 +53,8 @@ HRESULT Direct3DDevice::QueryInterface(
 		str << " " << *obp;
 	}
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -66,6 +68,8 @@ ULONG Direct3DDevice::AddRef()
 
 	str << std::endl;
 	str << "\t" << count;
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return count;
@@ -85,6 +89,8 @@ ULONG Direct3DDevice::Release()
 
 	str << std::endl;
 	str << "\t" << count;
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return count;
@@ -109,6 +115,8 @@ HRESULT Direct3DDevice::Initialize(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -125,6 +133,8 @@ HRESULT Direct3DDevice::GetCaps(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -155,6 +165,8 @@ HRESULT Direct3DDevice::SwapTextureHandles(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -178,6 +190,8 @@ HRESULT Direct3DDevice::CreateExecuteBuffer(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -193,6 +207,8 @@ HRESULT Direct3DDevice::GetStats(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -232,6 +248,8 @@ HRESULT Direct3DDevice::Execute(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -254,6 +272,8 @@ HRESULT Direct3DDevice::AddViewport(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -275,6 +295,8 @@ HRESULT Direct3DDevice::DeleteViewport(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -314,6 +336,8 @@ HRESULT Direct3DDevice::NextViewport(
 		str << " " << *lplpDirect3DViewport;
 	}
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -346,6 +370,8 @@ HRESULT Direct3DDevice::Pick(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -362,6 +388,8 @@ HRESULT Direct3DDevice::GetPickRecords(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -396,8 +424,12 @@ HRESULT Direct3DDevice::EnumTextureFormats(
 
 	HRESULT hr = this->_original->EnumTextureFormats(EnumTextureFormatsCallback, lpArg);
 
-	LogText(tostr_HR(hr));
+	std::ostringstream str2;
+	str2 << std::endl;
+	str2 << tostr_HR(hr);
+	str2 << std::endl << "\treturn to: " << _ReturnAddress();
 
+	LogText(str2.str());
 	return hr;
 }
 
@@ -412,6 +444,8 @@ HRESULT Direct3DDevice::CreateMatrix(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -430,6 +464,8 @@ HRESULT Direct3DDevice::SetMatrix(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -447,6 +483,8 @@ HRESULT Direct3DDevice::GetMatrix(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -463,6 +501,8 @@ HRESULT Direct3DDevice::DeleteMatrix(
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -477,6 +517,8 @@ HRESULT Direct3DDevice::BeginScene()
 	str << std::endl;
 	str << tostr_HR(hr);
 
+	str << std::endl << "\treturn to: " << _ReturnAddress();
+
 	LogText(str.str());
 	return hr;
 }
@@ -490,6 +532,8 @@ HRESULT Direct3DDevice::EndScene()
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
@@ -511,6 +555,8 @@ HRESULT Direct3DDevice::GetDirect3D(
 
 	str << std::endl;
 	str << tostr_HR(hr);
+
+	str << std::endl << "\treturn to: " << _ReturnAddress();
 
 	LogText(str.str());
 	return hr;
